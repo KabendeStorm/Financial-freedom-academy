@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Area - Financial Freedom Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .members-area {
+            display: none;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+        }
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+        .resource-list li {
+            padding: 15px;
+            background: #f8f9fa;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #2C5F2D;
+        }
+        .resource-list a {
+            color: #2C5F2D;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container" id="loginForm">
+        <h2>Members Only Area</h2>
+        <p>Enter your access code to download premium resources</p>
+        <form onsubmit="checkPassword(event)">
+            <input type="password" id="password" placeholder="Access Code" required style="width: 100%; padding: 10px; margin: 20px 0;">
+            <button type="submit" class="btn-primary btn-full">Access Resources</button>
+        </form>
+    </div>
+
+    <!-- Members Area (Hidden until correct password) -->
+    <div class="members-area" id="membersArea">
+        <h1>Welcome to Premium Resources!</h1>
+        <p>Download your coaching tools below:</p>
+        
+        <ul class="resource-list">
+            <li>📋 <a href="resources/premium/01_client_intake_form.xlsx" download>Client Intake Form</a> - Start here for new coaching</li>
+            <li>💰 <a href="resources/premium/02_debt_snowball_calculator.xlsx" download>Debt Snowball Calculator</a> - Plan your debt freedom</li>
+            <li>📊 <a href="resources/premium/03_net_worth_tracker.xlsx" download>Net Worth Tracker</a> - Monitor your progress</li>
+            <li>✅ <a href="resources/premium/04_monthly_accountability_tracker.xlsx" download>Monthly Accountability Tracker</a> - Stay on track</li>
+            <li>🎯 <a href="resources/premium/05_emergency_fund_planner.xlsx" download>Emergency Fund Planner</a> - Build your safety net</li>
+        </ul>
+
+        <div style="margin-top: 40px; padding: 20px; background: #E8F5E9; border-radius: 10px;">
+            <h3>Need Help?</h3>
+            <p>WhatsApp Kabende: <a href="https://wa.me/264818647106">+264 81 864 7106</a></p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            // Change this password monthly!
+            if (password === 'Freedom2025') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('membersArea').style.display = 'block';
+            } else {
+                alert('Incorrect access code. Contact Kabende at +264 81 864 7106');
+            }
+        }
+    </script>
+</body>
+</html>
+```
